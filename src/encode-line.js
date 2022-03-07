@@ -12,6 +12,10 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function encodeLine(str) {
   let arr = str.split('')
+  for (i = 0; i < arr.length; i++) {
+    
+  }
+
   
 }
 
