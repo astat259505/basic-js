@@ -18,11 +18,17 @@ const { NotImplementedError } = require('../extensions/index.js');
   },
   removeLink(position) {
   let arr = this.result.split('~~')
+    if(position >= 1 && position < arr.length) {
   this.result = arr.filter((item, index) => index + 1 != position).join('~~')
   return this
+    } else {
+        this.result = ''
+        this.counter = 0
+        throw Error("You can't remove incorrect link!")
+    }
   },
   reverseChain() {
-  console.log(this.result)
+  
   let arr = this.result.split('~~').reverse().filter((item, index) => index != 0)
                        .map(item => `${item}~~`)
   this.result = arr.join('')
