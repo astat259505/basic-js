@@ -37,7 +37,7 @@ const { NotImplementedError } = require('../extensions/index.js');
       if (message[k].charCodeAt() >= 65 && message[k].charCodeAt() <= 90)
         count++
     }
-    console.log(count)
+    
     let arr2 = []
   
        for (let j = 0; j < count;j++) {
