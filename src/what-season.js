@@ -16,10 +16,10 @@ const { NotImplementedError } = require('../extensions/index.js');
   if (arguments.length == 0) {
     return 'Unable to determine the time of year!'
   } if (isNaN(Date.parse(date))) {
-    return new Error('Invalid date!')
+    throw new Error('Invalid date!')
  
   } if (new Date().getTime() - date.getTime() >= 0 && new Date().getTime() - date.getTime() < 10) {
-    return new Error('Invalid date!')
+    throw new Error('Invalid date!')
   }
    
    if (date.getMonth() == 11 || date.getMonth() == 0 || date.getMonth() == 1) {
@@ -31,7 +31,7 @@ const { NotImplementedError } = require('../extensions/index.js');
   } if (date.getMonth() == 8 || date.getMonth() == 9 || date.getMonth() == 10) {
     return  'autumn'
   } else {
-    return new Error('Invalid date!')
+    throw new Error('Invalid date!')
   }
  }
 
